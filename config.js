@@ -10,7 +10,7 @@ window.RELINK_CONFIG = {
   DISCORD_CLIENT_ID: '1333801116692910172',
 
   // Doit être IDENTIQUE à celle déclarée chez Discord (OAuth2 → Redirects)
-  REDIRECT_URI: "https://nkinglifetwx.github.io/ReSite/",
+  REDIRECT_URI: "https://nkinglifetwx.github.io/callback.html/",
 
   // Nom court du site pour le panel (a-z, 0-9, tirets) — voir relink.manifest.json
   SITE_SLUG: 'MainWeb',
