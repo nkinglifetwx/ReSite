@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ReLink — Boutique</title>
+  <meta name="description" content="La boutique ReLink : dépense tes éclats.">
+  <meta name="theme-color" content="#0e1215">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%232ee59d'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <header class="site-header">
+      <div class="bar glass">
+        <a class="brand" href="index.html"><span class="logo" aria-hidden="true"></span><span id="brand-name">ReLink</span></a>
+        <nav class="nav" aria-label="Navigation principale">
+          <a href="index.html" data-relink-section="home">Accueil</a>
+          <a href="boutique.html" data-relink-section="boutique">Boutique</a>
+        </nav>
+        <div id="session"></div>
+      </div>
+    </header>
+    <div id="config-warning" class="config-warning glass" hidden>⚠️ Site non configuré : renseigne <code class="inline-code">WORKER_URL</code> et <code class="inline-code">DISCORD_CLIENT_ID</code> dans <code class="inline-code">config.js</code>.</div>
+    <div data-relink-maintenance hidden class="maintenance glass"><h2>Site en maintenance</h2><p class="fine" style="margin-top:10px">Nous revenons très vite.</p></div>
+
+    <main data-relink-section="boutique">
+      <div class="page-head">
+        <div>
+          <h1>Boutique</h1>
+          <p>Dépense tes éclats. Les achats sont livrés en jeu par le staff.</p>
+        </div>
+        <div class="balance glass-soft" id="balance" hidden><span>Ton solde</span><b>✦ <span id="bal-val">0</span></b></div>
+      </div>
+
+      <div class="toolbar glass">
+        <div class="chips" id="chips" role="group" aria-label="Catégories"></div>
+        <input type="search" id="q" placeholder="Rechercher un article…" aria-label="Rechercher un article" autocomplete="off">
+      </div>
+
+      <div class="grid" id="grid" aria-live="polite">
+        <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+      </div>
+
+      <section id="history-section" hidden>
+        <h2 class="section-title" style="margin-top:44px">Mes achats</h2>
+        <div class="history glass"><div class="table-scroll">
+          <table>
+            <thead><tr><th>Article</th><th>Qté</th><th>Éclats</th><th>Statut</th><th>Date</th></tr></thead>
+            <tbody id="history"></tbody>
+          </table>
+        </div></div>
+      </section>
+    </main>
+
+    <dialog id="confirm" aria-labelledby="c-title">
+      <h2 id="c-title">Confirmer l’achat</h2>
+      <p class="fine">Les éclats sont débités immédiatement.</p>
+      <div style="margin-top:14px">
+        <div class="row"><span>Article</span><strong id="c-name"></strong></div>
+        <div class="row"><span>Quantité</span><strong id="c-qty"></strong></div>
+        <div class="row"><span>Total</span><strong id="c-total"></strong></div>
+      </div>
+      <p class="msg err" id="c-err" role="alert"></p>
+      <div class="actions">
+        <button class="btn ghost" type="button" id="c-cancel">Annuler</button>
+        <button class="btn primary" type="button" id="c-ok">Acheter</button>
+      </div>
+    </dialog>
+    <footer>© <span id="year"></span> ReLink · Propulsé par le Worker ReLink</footer>
+  </div>
+  <script src="config.js"></script>
+  <script src="relink.js"></script>
+  <script src="ui.js"></script>
+  <script src="shop.js"></script>
+  <script>document.getElementById("year") && (document.getElementById("year").textContent = new Date().getFullYear());</script>
+</body>
+</html>

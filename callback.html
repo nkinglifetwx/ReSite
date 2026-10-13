@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connexion…</title>
+  <meta name="description" content="Connexion à ReLink">
+  <meta name="theme-color" content="#0e1215">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%232ee59d'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap center-card">
+    <div class="glass" role="status" aria-live="polite">
+      <div class="spinner" id="cb-spin"></div>
+      <h1 id="cb-title" style="font-size:1.5rem">Connexion en cours…</h1>
+      <p class="fine" id="cb-text">Nous finalisons ton compte ReLink.</p>
+      <a class="btn primary" href="index.html" id="cb-back" hidden>Retour à l’accueil</a>
+    </div>
+  </div>
+  <script src="config.js"></script>
+  <script src="relink.js"></script>
+  <script src="callback.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "ReLink",
+  "description": "Site principal ReLink : création de compte et boutique",
+  "url": "https://REMPLACE-MOI",
+  "sections": [
+    { "key": "home", "label": "Accueil", "description": "Page d'accueil et création de compte" },
+    { "key": "boutique", "label": "Boutique", "description": "Boutique d'éclats" }
+  ],
+  "permissions": []
+}
